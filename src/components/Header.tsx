@@ -40,7 +40,7 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
             <img
               onClick={() => setLightMode(!LightMode)}
               src={Sun}
-              alt="MoonIcon"
+              alt="SunIcon"
               className="w-5 h-5 md:w-7 md:h-7 cursor-pointer"
             />
           )}
