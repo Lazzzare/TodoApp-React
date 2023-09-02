@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+input:focus {
+  outline: none;
+}
+
 @layer base {
   html {
     font-family: "Josefin Sans", sans-serif;
