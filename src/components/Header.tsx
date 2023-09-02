@@ -20,7 +20,7 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
       >
         {/* Header (navbar) */}
         <div
-          className="flex flex-row justify-between md:items-center md:w-[541px] 
+          className="flex flex-row justify-between md:items-center md:w-[541px]
             md:mx-auto px-6 pt-10 md:pt-20 md:px-0"
         >
           <h1
