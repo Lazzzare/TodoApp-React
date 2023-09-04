@@ -4,6 +4,7 @@ import Circle from "../assets/Circle.svg";
 import { AnimatePresence } from "framer-motion";
 import Todo from "./Todo";
 import TodoFooter from "./TodoFooter";
+import Input from "./Input";
 
 interface TodoTypes {
   id: string;
@@ -65,24 +66,13 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
 
   return (
     <div className="w-full max-w-[327px] md:max-w-[541px] mx-auto -mt-28">
-      <form onSubmit={addTodo} className="relative">
-        <div className="flex flex-row">
-          <input
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.currentTarget.value)}
-            placeholder="Create a new todo…"
-            className={`${
-              LightMode ? "bg-white text-slate-500" : "bg-[#25273D] text-white"
-            } w-full py-[14px] text-sm md:text-lg rounded-[5px] shadow-lg pl-[72px] mb-4`}
-          />
-          <img
-            src={Circle}
-            alt="Circle"
-            className="absolute left-6 top-[37%] transform -translate-y-1/2"
-          />
-        </div>
-      </form>
+      <Input
+        LightMode={LightMode}
+        addTodo={addTodo}
+        input={input}
+        setInput={setInput}
+        Circle={Circle}
+      />
 
       {/* Todos */}
       <div
