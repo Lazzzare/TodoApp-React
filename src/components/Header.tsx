@@ -20,8 +20,8 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
       >
         {/* Header (navbar) */}
         <div
-          className="flex flex-row justify-between md:items-center md:w-[541px]
-            md:mx-auto px-6 pt-10 md:pt-20 md:px-0"
+          className="flex flex-row justify-between md:items-center w-[327px] md:w-[541px]
+            mx-auto pt-10 md:pt-20 px-0"
         >
           <h1
             className="text-white text-2xl font-bold tracking-[10px] uppercase cursor-pointer
