@@ -17,8 +17,29 @@ interface TodosProps {
 const Todos: React.FC<TodosProps> = ({ LightMode }) => {
   const [input, setInput] = useState<string>("");
   const [todos, setTodos] = useState<TodoTypes[]>([]);
-  const [completedTodos, setCompletedTodos] = useState([]);
   const [todoLength, setTodoLength] = useState(0);
+  const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+
+  const handleFilterAll = () => {
+    setFilter("all");
+  };
+
+  const handleFilterActive = () => {
+    setFilter("active");
+  };
+
+  const handleFilterCompleted = () => {
+    setFilter("completed");
+  };
+
+  const filteredTodos = todos.filter((todo) => {
+    if (filter === "completed") {
+      return todo.completed;
+    } else if (filter === "active") {
+      return !todo.completed;
+    }
+    return true;
+  });
 
   const addTodo: FormEventHandler<HTMLFormElement> = (
     e: React.FormEvent<HTMLFormElement>
@@ -33,6 +54,12 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
       setTodos([...todos, newTodo]);
       setInput("");
     }
+  };
+
+  const deleteCompletedTodos = () => {
+    const activeTodos = todos.filter((todo) => !todo.completed);
+    setTodos(activeTodos);
+    setTodoLength(activeTodos.length);
   };
 
   return (
@@ -65,7 +92,7 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
         <ul>
           {/* TodoItem */}
           <AnimatePresence>
-            {todos.map((todo) => (
+            {filteredTodos.map((todo) => (
               <Todo
                 key={todo.id}
                 todo={todo}
@@ -91,32 +118,79 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
                   LightMode ? "bg-white" : "bg-[#25273D]"
                 } md:flex flex-row justify-center items-center gap-5 text-[#5B5E7E] text-sm`}
               >
-                <span className="hover:text-[#3A7CFD] cursor-pointer">All</span>
-                <span className="hover:text-[#3A7CFD] cursor-pointer">
+                <span
+                  onClick={handleFilterAll}
+                  className={`${
+                    filter === "all"
+                      ? "text-[#3A7CFD] font-bold"
+                      : "text-[#5B5E7E]"
+                  }hover:text-white cursor-pointer`}
+                >
+                  All
+                </span>
+                <span
+                  onClick={handleFilterActive}
+                  className={`${
+                    filter === "active"
+                      ? "text-[#3A7CFD] font-bold"
+                      : "text-[#5B5E7E]"
+                  }hover:text-white cursor-pointer`}
+                >
                   Active
                 </span>
-                <span className="hover:text-[#3A7CFD] cursor-pointer">
+                <span
+                  onClick={handleFilterCompleted}
+                  className={`${
+                    filter === "completed"
+                      ? "text-[#3A7CFD] font-bold"
+                      : "text-[#5B5E7E]"
+                  }hover:text-white cursor-pointer`}
+                >
                   Completed
                 </span>
               </div>
-              <h3>Clear Completed</h3>
+              <h3 onClick={deleteCompletedTodos} className="cursor-pointer">
+                Clear Completed
+              </h3>
             </div>
             <div
               className={`md:hidden ${
                 LightMode ? "bg-white" : "bg-[#25273D]"
               } pt-[15px] pb-[19px] flex flex-row justify-center items-center gap-5 text-[#5B5E7E] text-sm`}
             >
-              <span className="hover:text-[#3A7CFD] cursor-pointer">All</span>
-              <span className="hover:text-[#3A7CFD] cursor-pointer">
+              <span
+                onClick={handleFilterAll}
+                className={`${
+                  filter === "all"
+                    ? "text-[#3A7CFD] font-bold"
+                    : "text-[5B5E7E]"
+                }hover:text-[#494C6B] cursor-pointer`}
+              >
+                All
+              </span>
+              <span
+                onClick={handleFilterActive}
+                className={`${
+                  filter === "active"
+                    ? "text-[#3A7CFD] font-bold"
+                    : "text-[5B5E7E]"
+                }hover:text-[#494C6B] cursor-pointer`}
+              >
                 Active
               </span>
-              <span className="hover:text-[#3A7CFD] cursor-pointer">
+              <span
+                onClick={handleFilterCompleted}
+                className={`${
+                  filter === "completed"
+                    ? "text-[#3A7CFD] font-bold"
+                    : "text-[5B5E7E]"
+                }hover:text-[#494C6B] cursor-pointer`}
+              >
                 Completed
               </span>
             </div>
           </div>
         ) : null}
-        {/*  */}
       </div>
     </div>
   );
