@@ -1,11 +1,10 @@
 import React, { useState, FormEventHandler } from "react";
 import uuid from "react-uuid";
 import Circle from "../assets/Circle.svg";
-import CompleteCircle from "../assets/CompleteCircle.svg";
-import Delete from "../assets/icon-cross.svg";
-import { motion, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
+import Todo from "./Todo";
 
-interface Todo {
+interface TodoTypes {
   id: string;
   title: string;
   completed: boolean;
@@ -17,7 +16,9 @@ interface TodosProps {
 
 const Todos: React.FC<TodosProps> = ({ LightMode }) => {
   const [input, setInput] = useState<string>("");
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<TodoTypes[]>([]);
+  const [completedTodos, setCompletedTodos] = useState([]);
+  const [todoLength, setTodoLength] = useState(0);
 
   const addTodo: FormEventHandler<HTMLFormElement> = (
     e: React.FormEvent<HTMLFormElement>
@@ -26,60 +27,96 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
     if (input === "") {
       return;
     } else {
-      const newTodo: Todo = { id: uuid(), title: input, completed: false };
+      const newTodo: TodoTypes = { id: uuid(), title: input, completed: false };
+      setTodoLength((currentLength) => currentLength + 1);
+      console.log(todoLength);
       setTodos([...todos, newTodo]);
       setInput("");
     }
   };
 
   return (
-    <div className="w-full max-w-[327px] md:max-w-[541px] mx-auto -mt-24">
-      <form onSubmit={addTodo}>
+    <div className="w-full max-w-[327px] md:max-w-[541px] mx-auto -mt-28">
+      <form onSubmit={addTodo} className="relative">
         <div className="flex flex-row">
           <input
             type="text"
             value={input}
-            onChange={(e) => setInput(e.target.value)}
+            onChange={(e) => setInput(e.currentTarget.value)}
             placeholder="Create a new todo…"
             className={`${
               LightMode ? "bg-white text-slate-500" : "bg-[#25273D] text-white"
-            } w-full py-[14px] text-sm md:text-lg rounded-[5px] shadow-lg pl-8 mb-4`}
+            } w-full py-[14px] text-sm md:text-lg rounded-[5px] shadow-lg pl-[72px] mb-4`}
+          />
+          <img
+            src={Circle}
+            alt="Circle"
+            className="absolute left-6 top-[37%] transform -translate-y-1/2"
           />
         </div>
       </form>
+
       {/* Todos */}
       <div
         id="todo-list"
-        style={{ maxHeight: "300px", overflowY: "auto" }}
+        style={{ maxHeight: "600px", overflowY: "auto" }}
         className="rounded-t-md"
       >
         <ul>
           {/* TodoItem */}
           <AnimatePresence>
-            {" "}
-            {/* Wrap with AnimatePresence */}
             {todos.map((todo) => (
-              <motion.div
+              <Todo
                 key={todo.id}
-                initial={{ opacity: 0, y: 0, scale: 0.9 }}
-                animate={{ opacity: 1, y: 0, scale: 1 }}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className={`flex flex-row justify-between items-center border-b-[1px] shadow-lg py-4 px-5 text-xs md:text-lg tracking-[-0.167px]
-                ${
-                  LightMode
-                    ? "bg-white border-[#E3E4F1] text-[#494C6B]"
-                    : "bg-[#25273D] border-[#393A4B] text-[#C8CBE7]"
-                }`}
-              >
-                <div className="flex flex-row gap-3 md:gap-5 items-center">
-                  <img src={Circle} alt="CircleIcon" />
-                  <li>{todo.title}</li>
-                </div>
-                <img src={Delete} alt="DeleteIcon" />
-              </motion.div>
+                todo={todo}
+                LightMode={LightMode}
+                todos={todos}
+                setTodos={setTodos}
+                todoLength={todoLength}
+                setTodoLength={setTodoLength}
+              />
             ))}
           </AnimatePresence>
         </ul>
+        {todoLength >= 1 ? (
+          <div className="flex flex-col gap-4">
+            <div
+              className={`flex flex-row w-full items-center justify-between px-5 py-4 pb-[22px] ${
+                LightMode ? "bg-white" : "bg-[#25273D]"
+              } text-[#5B5E7E] text-xs md:text-sm rounded-b-[5px] shadow-md`}
+            >
+              <h3>{todoLength} items left</h3>
+              <div
+                className={`hidden ${
+                  LightMode ? "bg-white" : "bg-[#25273D]"
+                } md:flex flex-row justify-center items-center gap-5 text-[#5B5E7E] text-sm`}
+              >
+                <span className="hover:text-[#3A7CFD] cursor-pointer">All</span>
+                <span className="hover:text-[#3A7CFD] cursor-pointer">
+                  Active
+                </span>
+                <span className="hover:text-[#3A7CFD] cursor-pointer">
+                  Completed
+                </span>
+              </div>
+              <h3>Clear Completed</h3>
+            </div>
+            <div
+              className={`md:hidden ${
+                LightMode ? "bg-white" : "bg-[#25273D]"
+              } pt-[15px] pb-[19px] flex flex-row justify-center items-center gap-5 text-[#5B5E7E] text-sm`}
+            >
+              <span className="hover:text-[#3A7CFD] cursor-pointer">All</span>
+              <span className="hover:text-[#3A7CFD] cursor-pointer">
+                Active
+              </span>
+              <span className="hover:text-[#3A7CFD] cursor-pointer">
+                Completed
+              </span>
+            </div>
+          </div>
+        ) : null}
+        {/*  */}
       </div>
     </div>
   );
