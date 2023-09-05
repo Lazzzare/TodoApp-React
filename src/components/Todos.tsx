@@ -80,8 +80,8 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
         style={{ maxHeight: "600px", overflowY: "auto" }}
         className="rounded-t-md"
       >
+        {/* TodoItem */}
         <ul>
-          {/* TodoItem */}
           <AnimatePresence>
             {filteredTodos.map((todo) => (
               <Todo
