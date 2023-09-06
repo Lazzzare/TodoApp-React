@@ -20,7 +20,7 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
   const [input, setInput] = useState<string>("");
   const [todos, setTodos] = useState<TodoTypes[]>([]);
   const [todoLength, setTodoLength] = useState(0);
-  const [filter, setFilter] = useState<"all" | "active" | "completed">("all");
+  const [filter, setFilter] = useState<string>("all");
 
   const handleFilterAll = () => {
     setFilter("all");
@@ -52,7 +52,6 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
     } else {
       const newTodo: TodoTypes = { id: uuid(), title: input, completed: false };
       setTodoLength((currentLength) => currentLength + 1);
-      console.log(todoLength);
       setTodos([...todos, newTodo]);
       setInput("");
     }
