@@ -1,6 +1,6 @@
 # TodoApp
 
-  <img src="./src/assets/Readme.PNG" alt="First Image" width="640px">
+  <img src="./src/assets/Readme.PNG" alt="First Image">
 
 # Getting Started
 
