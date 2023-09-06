@@ -1,27 +1,41 @@
-# React + TypeScript + Vite
+# TodoApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+  <img src="./src/assets/Readme.PNG" alt="First Image" width="640px">
 
-Currently, two official plugins are available:
+# Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![.gif](./src/assets/gif.gif)
 
-## Expanding the ESLint configuration
+1. First of all you need to clone app repository from github:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+```
+https://github.com/Lazzzare/TodoApp-React
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Next step requires install all the dependencies.
+
+```
+npm install
+```
+
+3. Running the Project
+
+```
+npm run dev
+```
+
+# Links
+
+- Solution URL: [GitHub Code](https://github.com/Lazzzare/TodoApp-React)
+- Live Site URL: [Live Site](https://todo-app-react-lazzzare.vercel.app/)
+
+# Built With
+
+- _Vite_
+- _React_
+- _Framer-Motion_
+- _Typescript (TSX)_
+- _React Hooks (useState)_
+- _sessionStorage_
+- _uuid_
+- _TailwindCss_
