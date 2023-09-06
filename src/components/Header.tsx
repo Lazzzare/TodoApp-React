@@ -1,5 +1,9 @@
 import Sun from "../assets/icon-sun.svg";
 import Moon from "../assets/icon-moon.svg";
+import DarkModeBackgroundMobile from "../assets/bg-mobile-dark.jpg";
+import DarkModeBackgroundDesktop from "../assets/bg-desktop-dark.jpg";
+import LightModeBackgroundMobile from "../assets/bg-mobile-light.jpg";
+import LightModeBackgroundDesktop from "../assets/bg-desktop-light.jpg";
 
 interface HeaderProps {
   LightMode: boolean;
@@ -14,8 +18,8 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
       <div
         className={`${
           LightMode
-            ? "bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop"
-            : "bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop"
+            ? `bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop`
+            : `bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop`
         } h-52 md:h-80 bg-cover bg-center`}
       >
         {/* Header (navbar) */}
