@@ -7,7 +7,7 @@ input:focus {
   outline: none;
 }
 
-.background {
+/* .background {
   background-image: url("../assets/bg-mobile-light.jpg");
   background-size: cover;
   background-position: center;
@@ -17,9 +17,9 @@ input:focus {
   .background {
     background-image: url("../assets/bg-desktop-light.jpg");
   }
-}
+} */
 
-.h-52 {
+/* .h-52 {
   height: 13rem;
 }
 
@@ -27,7 +27,7 @@ input:focus {
   .h-52 {
     height: auto;
   }
-}
+} */
 
 @layer base {
   html {
