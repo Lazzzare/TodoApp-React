@@ -18,6 +18,8 @@ interface HeaderProps {
 }
 
 const Header = ({ LightMode, setLightMode }: HeaderProps) => {
+  const backgroundImageURL =
+    "https://todo-app-react-kappa-three.vercel.app/assets/src/assets/bg-desktop-light.jpg"; // Replace with the correct URL
   return (
     // Main
     <div className="w-full">
