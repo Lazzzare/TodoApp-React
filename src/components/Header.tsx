@@ -5,6 +5,11 @@ import DarkModeBackgroundDesktop from "../assets/bg-desktop-dark.jpg";
 import LightModeBackgroundMobile from "../assets/bg-mobile-light.jpg";
 import LightModeBackgroundDesktop from "../assets/bg-desktop-light.jpg";
 
+const IMAGE_BASE_URL =
+  process.env.NODE_ENV === "production"
+    ? "https://https://todo-app-react-kappa-three.vercel.app//assets/"
+    : "/assets/";
+
 interface HeaderProps {
   LightMode: boolean;
   setLightMode: (e: boolean) => void;
@@ -18,8 +23,8 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
       <div
         className={`${
           LightMode
-            ? `bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop`
-            : `bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop`
+            ? "bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop"
+            : "bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop"
         } h-52 md:h-80 bg-cover bg-center`}
       >
         {/* Header (navbar) */}

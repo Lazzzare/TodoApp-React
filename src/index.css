@@ -7,6 +7,49 @@ input:focus {
   outline: none;
 }
 
+/* .DarkModeBackgroundMobile {
+  background: url(./assets/bg-mobile-dark.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* .DarkModeBackgroundDesktop {
+  background: url(./assets/bg-desktop-dark.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* .LightModeBackgroundMobile {
+  background: url(./assets/bg-mobile-light.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* .LightModeBackgroundDesktop {
+  background: url(./assets/bg-desktop-light.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* @media only screen and (max-width: 600px) {
+  .LightModeBackgroundDesktop {
+    background: url(./assets/bg-desktop-light.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .DarkModeBackgroundDesktop {
+    background: url(./assets/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+} */
+
 @layer base {
   html {
     font-family: "Josefin Sans", sans-serif;
