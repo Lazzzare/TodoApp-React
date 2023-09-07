@@ -7,15 +7,16 @@ interface HeaderProps {
 }
 
 const Header = ({ LightMode, setLightMode }: HeaderProps) => {
-  const backgroundImageURL =
-    "https://todo-app-react-kappa-three.vercel.app/assets/src/assets/bg-desktop-light.jpg";
   return (
     // Main
     <div className="w-full">
       {/* Background */}
       <div
-        style={{ backgroundImage: `url(${backgroundImageURL})` }}
-        className={`background h-52 md:h-80 bg-cover bg-center`}
+        className={`${
+          LightMode
+            ? "bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop"
+            : "bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop"
+        } h-52 md:h-80 bg-cover bg-center`}
       >
         {/* Header (navbar) */}
         <div
