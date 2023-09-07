@@ -1,9 +1,11 @@
 import Sun from "../assets/icon-sun.svg";
 import Moon from "../assets/icon-moon.svg";
-import DarkModeBackgroundMobile from "../assets/bg-mobile-dark.jpg";
-import DarkModeBackgroundDesktop from "../assets/bg-desktop-dark.jpg";
-import LightModeBackgroundMobile from "../assets/bg-mobile-light.jpg";
-import LightModeBackgroundDesktop from "../assets/bg-desktop-light.jpg";
+backgroundImage: {
+  LightModeBackgroundMobile: "url('../src/assets/bg-mobile-light.jpg')";
+  DarkModeBackgroundMobile: "url('../src/assets/bg-mobile-dark.jpg')";
+  LightModeBackgroundDesktop: "url('../src/assets/bg-desktop-light.jpg')";
+  DarkModeBackgroundDesktop: "url('../src/assets/bg-desktop-dark.jpg')";
+}
 
 const IMAGE_BASE_URL =
   process.env.NODE_ENV === "production"

@@ -7,6 +7,43 @@ input:focus {
   outline: none;
 }
 
+/* Define background images */
+.background {
+  background-image: url("../assets/bg-mobile-light.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .background {
+    background-image: url("../assets/bg-desktop-light.jpg");
+  }
+}
+
+/* Other styles as needed */
+.h-52 {
+  height: 13rem; /* Adjust as needed */
+}
+
+@media (min-width: 768px) {
+  .h-52 {
+    height: auto; /* Adjust for desktop screens */
+  }
+}
+
+/* Add any additional styles here */
+
+/* Dark Mode Styles (you can define these if needed) */
+/* .dark-mode .background {
+  background-image: url('../assets/bg-mobile-dark.jpg');
+}
+
+.dark-mode .md\:background {
+  @media (min-width: 768px) {
+    background-image: url('../assets/bg-desktop-dark.jpg');
+  }
+} */
+
 /* .DarkModeBackgroundMobile {
   background: url(./assets/bg-mobile-dark.jpg);
   background-repeat: no-repeat;
