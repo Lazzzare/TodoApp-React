@@ -7,7 +7,7 @@ import LightModeBackgroundDesktop from "../assets/bg-desktop-light.jpg";
 
 const IMAGE_BASE_URL =
   process.env.NODE_ENV === "production"
-    ? "https://https://todo-app-react-kappa-three.vercel.app//assets/"
+    ? "https://https://todo-app-react-kappa-three.vercel.app/assets/"
     : "/assets/";
 
 interface HeaderProps {
