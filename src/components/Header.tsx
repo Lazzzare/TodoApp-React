@@ -1,16 +1,5 @@
 import Sun from "../assets/icon-sun.svg";
 import Moon from "../assets/icon-moon.svg";
-backgroundImage: {
-  LightModeBackgroundMobile: "url('../src/assets/bg-mobile-light.jpg')";
-  DarkModeBackgroundMobile: "url('../src/assets/bg-mobile-dark.jpg')";
-  LightModeBackgroundDesktop: "url('../src/assets/bg-desktop-light.jpg')";
-  DarkModeBackgroundDesktop: "url('../src/assets/bg-desktop-dark.jpg')";
-}
-
-const IMAGE_BASE_URL =
-  process.env.NODE_ENV === "production"
-    ? "https://https://todo-app-react-kappa-three.vercel.app/assets/"
-    : "/assets/";
 
 interface HeaderProps {
   LightMode: boolean;
@@ -19,17 +8,14 @@ interface HeaderProps {
 
 const Header = ({ LightMode, setLightMode }: HeaderProps) => {
   const backgroundImageURL =
-    "https://todo-app-react-kappa-three.vercel.app/assets/src/assets/bg-desktop-light.jpg"; // Replace with the correct URL
+    "https://todo-app-react-kappa-three.vercel.app/assets/src/assets/bg-desktop-light.jpg";
   return (
     // Main
     <div className="w-full">
       {/* Background */}
       <div
-        className={`${
-          LightMode
-            ? "bg-DarkModeBackgroundMobile md:bg-DarkModeBackgroundDesktop"
-            : "bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop"
-        } h-52 md:h-80 bg-cover bg-center`}
+        style={{ backgroundImage: `url(${backgroundImageURL})` }}
+        className={`background h-52 md:h-80 bg-cover bg-center`}
       >
         {/* Header (navbar) */}
         <div
