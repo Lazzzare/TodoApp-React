@@ -7,7 +7,6 @@ input:focus {
   outline: none;
 }
 
-/* Define background images */
 .background {
   background-image: url("../assets/bg-mobile-light.jpg");
   background-size: cover;
@@ -20,72 +19,15 @@ input:focus {
   }
 }
 
-/* Other styles as needed */
 .h-52 {
-  height: 13rem; /* Adjust as needed */
+  height: 13rem;
 }
 
 @media (min-width: 768px) {
   .h-52 {
-    height: auto; /* Adjust for desktop screens */
+    height: auto;
   }
 }
-
-/* Add any additional styles here */
-
-/* Dark Mode Styles (you can define these if needed) */
-/* .dark-mode .background {
-  background-image: url('../assets/bg-mobile-dark.jpg');
-}
-
-.dark-mode .md\:background {
-  @media (min-width: 768px) {
-    background-image: url('../assets/bg-desktop-dark.jpg');
-  }
-} */
-
-/* .DarkModeBackgroundMobile {
-  background: url(./assets/bg-mobile-dark.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-
-/* .DarkModeBackgroundDesktop {
-  background: url(./assets/bg-desktop-dark.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-
-/* .LightModeBackgroundMobile {
-  background: url(./assets/bg-mobile-light.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-
-/* .LightModeBackgroundDesktop {
-  background: url(./assets/bg-desktop-light.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-} */
-
-/* @media only screen and (max-width: 600px) {
-  .LightModeBackgroundDesktop {
-    background: url(./assets/bg-desktop-light.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-  .DarkModeBackgroundDesktop {
-    background: url(./assets/bg-desktop-dark.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-  }
-} */
 
 @layer base {
   html {
