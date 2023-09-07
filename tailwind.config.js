@@ -6,9 +6,9 @@ export default {
     extend: {
       backgroundImage: {
         LightModeBackgroundMobile: "url('src/assets/bg-mobile-light.jpg')",
-        DarkModeBackgroundMobile: "url('/src/assets/bg-mobile-dark.jpg')",
-        LightModeBackgroundDesktop: "url('/src/assets/bg-desktop-light.jpg')",
-        DarkModeBackgroundDesktop: "url('/src/assets/bg-desktop-dark.jpg')",
+        DarkModeBackgroundMobile: "url('src/assets/bg-mobile-dark.jpg')",
+        LightModeBackgroundDesktop: "url('src/assets/bg-desktop-light.jpg')",
+        DarkModeBackgroundDesktop: "url('src/assets/bg-desktop-dark.jpg')",
       },
     },
   },
