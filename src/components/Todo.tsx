@@ -87,7 +87,7 @@ const Todo: React.FC<TodoProps> = ({
             todo.completed ? "line-through text-[#4D5067]" : "no-underline"
           }`}
         >
-          {todo.title}
+          <p>{todo.title}</p>
         </li>
       </div>
       <img
