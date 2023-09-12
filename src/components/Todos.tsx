@@ -81,6 +81,7 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
       >
         {/* TodoItem */}
         <ul>
+          {/* FramerMotion */}
           <AnimatePresence>
             {filteredTodos.map((todo) => (
               <Todo
