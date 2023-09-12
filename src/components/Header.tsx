@@ -10,7 +10,7 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
   return (
     // Main
     <div className="w-full">
-      {/* Background */}
+      {/* Backgroundddd */}
       <div
         className={`${
           LightMode
@@ -18,7 +18,7 @@ const Header = ({ LightMode, setLightMode }: HeaderProps) => {
             : "bg-LightModeBackgroundMobile md:bg-LightModeBackgroundDesktop"
         } h-52 md:h-80 bg-cover bg-center`}
       >
-        {/* Header (navbar) */}
+        {/* Header (navbarrrrrr) */}
         <div
           className="flex flex-row justify-between md:items-center w-[327px] md:w-[541px]
             mx-auto pt-10 md:pt-20 px-0"
