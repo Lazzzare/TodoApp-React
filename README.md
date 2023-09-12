@@ -31,7 +31,8 @@ npm run dev
 
 # Built With
 
-- _Vite_
+<img src="./src/assets/vite.svg" alt="viteLogo" /> _Vite_
+
 - _React_
 - _FramerMotion_
 - _Typescript (TSX)_
