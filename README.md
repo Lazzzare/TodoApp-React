@@ -31,7 +31,7 @@ npm run dev
 
 # Built With
 
-<img src="./src/assets/vite.svg" alt="viteLogo" /> _Vite_
+<img src="./src/assets/vite.svg" alt="viteLogo" width="30px" /> _Vite_
 
 - _React_
 - _FramerMotion_
