@@ -95,6 +95,7 @@ const Todos: React.FC<TodosProps> = ({ LightMode }) => {
             ))}
           </AnimatePresence>
         </ul>
+        {/* TodoFooter */}
         <TodoFooter
           filter={filter}
           todoLength={todoLength}
