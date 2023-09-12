@@ -7,28 +7,6 @@ input:focus {
   outline: none;
 }
 
-/* .background {
-  background-image: url("../assets/bg-mobile-light.jpg");
-  background-size: cover;
-  background-position: center;
-}
-
-@media (min-width: 768px) {
-  .background {
-    background-image: url("../assets/bg-desktop-light.jpg");
-  }
-} */
-
-/* .h-52 {
-  height: 13rem;
-}
-
-@media (min-width: 768px) {
-  .h-52 {
-    height: auto;
-  }
-} */
-
 @layer base {
   html {
     font-family: "Josefin Sans", sans-serif;
