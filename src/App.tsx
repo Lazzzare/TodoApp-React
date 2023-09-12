@@ -1,9 +1,15 @@
 import Header from "./components/Header";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Todos from "./components/Todos";
 
 const App = () => {
-  const [LightMode, setLightMode] = useState(false);
+  const [LightMode, setLightMode] = useState(
+    () => sessionStorage.getItem("darkMode") === "true"
+  );
+
+  useEffect(() => {
+    sessionStorage.setItem("darkMode", LightMode.toString());
+  }, [LightMode]);
   return (
     <div
       className={`w-full h-screen flex flex-col  ${
