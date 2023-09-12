@@ -35,7 +35,7 @@ npm run dev
 - _React_
 - _FramerMotion_
 - _Typescript (TSX)_
-- _React Hooks (useState)_
+- _React Hooks (useState, useEffect)_
 - _sessionStorage_
 - _uuid_
 - _TailwindCss_
